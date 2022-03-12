@@ -1,3 +1,5 @@
-Control your PC with a Telegram Bot
+<h1>Control your PC with a Telegram Bot</h1>
 
-This Python script use Telepot module :)
+<img src="https://s7.gifyu.com/images/notepad.gif">
+
+<h5>This Python script use telepot module btw :)</h5>
