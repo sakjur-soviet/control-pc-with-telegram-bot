@@ -16,15 +16,12 @@ def greenSquare():
 def redSquare():
     return u'\U0000274C'
 
-#INFORMAZIONI
-def sak_id():
-    return "413318410"
-def sak_username():
-    return "Sakjur"
+#INFO
+def user_id():
+    return "Your Telegram ID"
     
 
-
-#CHECK PROCESS DIOCANE
+#CHECK PROCESS
 def checkIfProcessRunning(processName):
     for proc in psutil.process_iter():
         try:
@@ -77,14 +74,14 @@ def sleepPc():
 def updateUser():
 # Notepad
     if(notepadRunning()):
-        bot.sendMessage(sak_id(), "FL" + greenSquare)
+        bot.sendMessage(user_id(), "FL" + greenSquare)
     else:
-        bot.sendMessage(sak_id(), "FL" + redSquare)
+        bot.sendMessage(user_id(), "FL" + redSquare)
 # Discord
     if(discordRunning()):
-        bot.sendMessage(sak_id(), "FL" + greenSquare)
+        bot.sendMessage(user_id(), "FL" + greenSquare)
     else:
-        bot.sendMessage(sak_id(), "FL" + redSquare)
+        bot.sendMessage(user_id(), "FL" + redSquare)
 
 
 
@@ -96,22 +93,22 @@ def handle(msg):
 
     if not (chat_id == 413318410):
         bot.sendMessage(chat_id, "CHI CAZZO SEI PORCODIO")
-        bot.sendMessage(sak_id(), 'Qualcuno mi ha contattato:\n' + chat_id)
+        bot.sendMessage(user_id(), 'Qualcuno mi ha contattato:\n' + chat_id)
 
     if(text == 'SHUTDOWN' or text == 'SD'):
-        bot.sendMessage(sak_id(), "PC Spento, arrivederci!")
+        bot.sendMessage(user_id(), "PC Spento, arrivederci!")
         shutdownPc()
     if(text == 'RESTART' or text == 'R'):
-        bot.sendMessage(sak_id(), "Restart avviato")
+        bot.sendMessage(user_id(), "Restart avviato")
         restartPc()
     if(text == 'SLEEP' or text == 'S'):
-        bot.sendMessage(sak_id(), "PC a mimir")
+        bot.sendMessage(user_id(), "PC a mimir")
         sleepPc()
     if(text == 'DISCORD' or text == 'DS'):
-        bot.sendMessage(sak_id(), "discord.exe chiuso")
+        bot.sendMessage(user_id(), "discord.exe chiuso")
         shutdownPc()
     if(text == 'NOTEPAD' or text == 'NP'):
-        bot.sendMessage(sak_id(), "notepad.exe chiuso")
+        bot.sendMessage(user_id(), "notepad.exe chiuso")
         killNotepad()
     
 
@@ -121,7 +118,7 @@ def handle(msg):
 
 
 
-#MERDA
+#OTHERS
 time.sleep(20)
 waitForInternetConnection()
 bot = telepot.Bot(TOKEN)
